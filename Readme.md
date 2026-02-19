@@ -18,7 +18,7 @@ mysql -uroot -p
 >> create user linux identified by "Redhat";
 >> grant all privileges on *.* to linux;
 >> flush privileges;
->> create flightdb;
+>> create database flightdb;
 >> grant all privileges on flightdb.* to linux;
 >> flush privileges;
 >> exit
@@ -31,7 +31,7 @@ cd FlightReservationSystem
 apt install openjdk-17-jdk -y
 apt install maven -y
 # vim application.properties
-cp application.properties src/main/resources/
+cp -Rf application.properties src/main/resources/
 export DATASOURCE_URL="jdbc:mysql://localhost:3306/flightdb"
 export DATASOURCE_USER="linux"
 export DATASOURCE_PASSWORD="Redhat"
